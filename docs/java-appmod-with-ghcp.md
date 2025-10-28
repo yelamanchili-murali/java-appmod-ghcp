@@ -146,6 +146,156 @@ The Reverse-then-Forward strategy is a recommended method for system modernisati
 
 This approach ensures that all requirements are captured and subtle behaviours are preserved before changes are introduced. By prioritising investigation (with Copilot assistance) before innovation, the method maintains behavioural equivalence while applying modern design principles.
 
+
+### ⚙️ Principle
+
+Instead of rushing to refactor, start by **teaching Copilot about your code**. Reverse-engineer what exists first; then use that knowledge to rebuild confidently.
+
+### 🧩 Example 1: Copilot Without and With Reverse-Then-Forward Technique
+
+**Without applying the technique**
+
+```text
+Prompt: "Modernize this legacy service to Spring Boot 3 and Java 21."
+```
+
+Copilot output:
+
+```java
+@Service
+public class InvoiceService {
+    public void processInvoice(Invoice inv) {
+        // migrated method
+        inv.calculateTotal();
+    }
+}
+```
+
+✅ Compiles
+⚠️ Business logic lost
+⚠️ No tests or documentation
+⚠️ No assurance of behavioral parity
+
+---
+
+**After applying reverse-then-forward technique**
+
+Step 1 – Prompt Copilot:
+
+```text
+Explain what this class does, method by method.
+```
+
+Output:
+
+```java
+// Handles invoice validation, tax calculation, and persistence.
+// Depends on TaxService and InvoiceRepository.
+```
+
+Step 2 – Extract specifications:
+
+```text
+Generate user stories and acceptance criteria from this class.
+```
+
+Output:
+
+```
+- The system must validate invoice items.
+- The system must apply tax rules per region.
+- The system must persist invoices in a relational store.
+```
+
+Step 3 – Generate tests:
+
+```text
+Create JUnit5 tests to verify this behavior.
+```
+
+Output:
+
+```java
+@Test
+void shouldApplyRegionalTaxRate() {
+    Invoice inv = new Invoice(...);
+    assertEquals(110, service.calculate(inv));
+}
+```
+
+Step 4 – Now modernize:
+
+```text
+Modernize this class to Spring Boot 3 ensuring tests still pass.
+```
+
+✅ Tests pass
+✅ Logic preserved
+✅ Documentation improved
+✅ Developer confidence high
+
+---
+
+### 🧭 Example 2: Configuration Migration
+
+**Without analysis:**
+
+```text
+Prompt: "Convert all .properties to YAML."
+```
+
+Copilot output:
+
+```yaml
+server: port: 8080
+```
+
+⚠️ Formatting errors, lost nested keys.
+
+**After structured prompting:**
+
+```text
+Explain what each property controls, then safely migrate to Spring Boot 3 YAML.
+```
+
+Copilot output:
+
+```yaml
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+```
+
+✅ Semantic accuracy retained.
+
+---
+
+### 🔁 Example 3: Integration Refactor
+
+**Before:** Copilot asked to “convert EJB to Spring service” directly → removed transaction boundary.
+
+**After:** Developer first prompts for:
+
+```text
+Explain how transactions are managed in this class.
+```
+
+Then:
+
+```text
+Generate equivalent @Transactional Spring implementation maintaining isolation level.
+```
+
+✅ Transaction integrity preserved.
+
+> 🚀 *Result:* Copilot transitions from code generator → reliable modernization assistant when guided by analysis-first tactics.
+
+---
+
+
 ### **Steps in the Reverse-then-Forward Approach**
 
 1. **Reverse Engineer Specifications**
@@ -203,34 +353,14 @@ Copilot’s contribution varies by task type. Use it where it amplifies producti
 | **Semi-Automated** | Config rewrites, modular restructuring | Suggest scaffolds and patterns     | Curate, test, and refine      |
 | **Manual**         | UI redesign, domain decomposition      | Draft boilerplate or documentation | Architect and validate design |
 
-**Illustrative prompt**
+### ** Effectiveness Curve**
 
-```text
-Refactor this Struts Action into a Spring MVC controller with annotations and test coverage.
+```mermaid
+graph LR
+A[Blind Generation] --> B[Explain Phase]
+B --> C[Reverse-then-Forward]
+C --> D[Test-Validated Modernisation]
 ```
-
----
-
-### **Example: Before and After**
-
-**Naïve prompt**
-
-```text
-Modernise InvoiceService class.
-```
-
-Output:
-
-```java
-@Service
-public class InvoiceService {
-    public void process(Invoice inv) { inv.calculateTotal(); }
-}
-```
-
-⚠️ Functionally incorrect  |  ⚠️ No tests  |  ✅ Compiles only
-
-
 
 ---
 
@@ -343,25 +473,16 @@ AI assistance introduces speed, but also new responsibilities.
 
 ---
 
-## **10  |  Appendix – Visuals and References**
-
-### **10.1  Effectiveness Curve**
-
-```mermaid
-graph LR
-A[Blind Generation] --> B[Explain Phase]
-B --> C[Reverse-then-Forward]
-C --> D[Test-Validated Modernisation]
-```
+## **10  |  Appendix – References**
 
 ### **10.2  References**
 
 To deepen your knowledge and for further reading, here are some valuable resources related to Java modernisation and using AI tools:
-- Martin Fowler & Thoughtworks – “Legacy Modernisation meets GenAI”: An article discussing how generative AI assists in understanding legacy systems, emphasising that reading and comprehending code is as crucial as writing new code. (Great for the philosophy behind using tools like Copilot in modernisation.) [martinfowler.com](https://martinfowler.com/articles/legacy-modernisation-gen-ai.html)
-- Microsoft Learn – Compare Java application hosting options on Azure: A guide comparing various Azure services for hosting Java apps. It’s useful to familiarise with platform choices (App Service, AKS, Azure Spring Apps) even if you remain cloud-agnostic, to know how different targets influence modernisation decisions. [learn.microsoft.com](https://learn.microsoft.com/en-us/azure/app-modernisation-guidance/foundation/replatform-java-applications-onto-azure)
-- Microsoft Learn – Replatform Java applications onto Azure: Detailed official guidance on moving Java EE/Spring applications to Azure with minimal changes. Even if you aren't using Azure, the considerations about packaging, externalising configs, etc., are broadly applicable. [learn.microsoft.com](https://learn.microsoft.com/en-us/azure/app-modernisation-guidance/foundation/replatform-java-applications-onto-azure)
-- ModerniseJava.com – Migrating from Older Java Frameworks: A blog post with steps and code examples for migrating from legacy frameworks (like Struts) to modern ones. It highlights challenges and solutions similar to our Scenario S4. [modernizejava.com](https://modernizejava.com/migrating-from-older-java-frameworks/)
-- GitHub Tech Community Blog – “Unlocking Application Modernisation with GitHub Copilot”: A 2025 article by Microsoft’s Richard Healy with real-world insights into Copilot’s benefits in legacy modernisation, including examples of Copilot explaining code and performing upgrades. [techcommun...rosoft.com](https://techcommunity.microsoft.com/blog/appsonazureblog/unlocking-application-modernisation-with-github-copilot/4454121)
+- _Martin Fowler & Thoughtworks_ – “Legacy Modernisation meets GenAI”: An article discussing how generative AI assists in understanding legacy systems, emphasising that reading and comprehending code is as crucial as writing new code. (Great for the philosophy behind using tools like Copilot in modernisation.) [martinfowler.com](https://martinfowler.com/articles/legacy-modernisation-gen-ai.html)
+- _Microsoft Learn_ – Compare Java application hosting options on Azure: A guide comparing various Azure services for hosting Java apps. It’s useful to familiarise with platform choices (App Service, AKS, Azure Spring Apps) even if you remain cloud-agnostic, to know how different targets influence modernisation decisions. [learn.microsoft.com](https://learn.microsoft.com/en-us/azure/app-modernisation-guidance/foundation/replatform-java-applications-onto-azure)
+- _Microsoft Learn_ – Replatform Java applications onto Azure: Detailed official guidance on moving Java EE/Spring applications to Azure with minimal changes. Even if you aren't using Azure, the considerations about packaging, externalising configs, etc., are broadly applicable. [learn.microsoft.com](https://learn.microsoft.com/en-us/azure/app-modernisation-guidance/foundation/replatform-java-applications-onto-azure)
+- _ModernizeJava.com_ – Migrating from Older Java Frameworks: A blog post with steps and code examples for migrating from legacy frameworks (like Struts) to modern ones. It highlights challenges and solutions similar to our Scenario S4. [modernizejava.com](https://modernizejava.com/migrating-from-older-java-frameworks/)
+- _GitHub Tech Community Blog_ – “Unlocking Application Modernisation with GitHub Copilot”: A 2025 article by Microsoft’s Richard Healy with real-world insights into Copilot’s benefits in legacy modernisation, including examples of Copilot explaining code and performing upgrades. [techcommun...rosoft.com](https://techcommunity.microsoft.com/blog/appsonazureblog/unlocking-application-modernisation-with-github-copilot/4454121)
 
 ---
 
