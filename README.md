@@ -8,7 +8,11 @@ It blends strategy and hands-on practice across two legacy projects:
 - **Spring Framework PetClinic (pre–Spring Boot)** — a classic Spring MVC app.
 - **Java EE Petstore (EE6)** — a JSF + EJB + JPA sample.
 
-> Portions of this work were generated with the assistance of AI tools such as including GitHub Copilot.
+> Portions of this work were generated with the assistance of AI tools, including GitHub Copilot and ChatGPT.
 > All content has been reviewed and curated for accuracy and educational use. Provided “as is” without warranty.
 
 To read online, open `SUMMARY.md` and navigate chapter by chapter.
+
+---
+
+**Edition:** Meta-Prompt Edition (with execution workflow and placeholders)
