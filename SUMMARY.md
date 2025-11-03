@@ -11,7 +11,3 @@
 * [Chapter 8 – Re-architecting the Petstore](chapters/08-rearchitecting-petstore.md)
 * [Chapter 9 – Governance, Testing, and Observability](chapters/09-governance-testing-observability.md)
 * [Chapter 10 – Lessons Learned and Future Outlook](chapters/10-lessons-and-future.md)
-* [Appendix A – Prompt Library](appendices/appendix-a-prompt-library.md)
-* [Appendix B – References & Further Reading](appendices/appendix-b-references.md)
-* [Appendix C – GitHub Branch Index](appendices/appendix-c-branch-index.md)
-* [Appendix D – Running the Copilot Meta-Prompts](appendices/appendix-d-running-prompts.md)
