@@ -9,8 +9,8 @@ This directory contains documentation and references to sample applications that
 A classic Spring MVC application that demonstrates modernization from traditional Spring Framework to Spring Boot 3 + Next.js.
 
 **Github Repository:**
-- **Original Application**: https://github.com/yelamanchili-murali/spring-framework-petclinic (branch: `main`)
-- **Modernization Results**: https://github.com/yelamanchili-murali/spring-framework-petclinic (branch: `modernisation`)
+- **Original Application**: https://github.com/yelamanchili-murali/spring-framework-petclinic/tree/main (branch: `main`)
+- **Modernization Results**: https://github.com/yelamanchili-murali/spring-framework-petclinic/tree/modernisation (branch: `modernisation`)
 
 The modernization branch README begins with:
 > "This repository documents a comprehensive Spring Framework → Spring Boot 3 + Next.js modernization journey. The migration has been completed successfully with full behavioral preservation and comprehensive documentation."
@@ -20,8 +20,8 @@ The modernization branch README begins with:
 A JSF + EJB + JPA sample application that demonstrates modernization from Java EE 6 to Spring Boot 3.
 
 **Github Repository:**
-- **Original Application**: https://github.com/yelamanchili-murali/agoncal-application-petstore-ee6 (branch: `master`)
-- **Modernization Results**: https://github.com/yelamanchili-murali/agoncal-application-petstore-ee6 (branch: `modernisation`)
+- **Original Application**: https://github.com/yelamanchili-murali/agoncal-application-petstore-ee6/tree/master (branch: `master`)
+- **Modernization Results**: https://github.com/yelamanchili-murali/agoncal-application-petstore-ee6/tree/modernisation (branch: `modernisation`)
 
 The modernization branch README begins with:
 > "This repository documents a comprehensive Java EE 6 → Spring Boot 3 modernization journey. The migration is in progress with thorough behavioral preservation planning and comprehensive documentation."
