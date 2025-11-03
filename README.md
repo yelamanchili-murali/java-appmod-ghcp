@@ -2,20 +2,20 @@
 
 **Author:** Murali Rao Yelamanchili
 
-This repository contains a comprehensive guide to effective Java application modernisation using AI-assisted development tools, particularly GitHub Copilot Agent Mode. It provides both strategic guidance and practical demonstrations through real-world legacy application modernization journeys.
+This repository demonstrates approaches to Java application modernisation using AI-assisted development tools, particularly GitHub Copilot Agent Mode. It serves as a simple guidebook with practical examples from real legacy application modernization journeys.
 
-## How to Use This Guide
+## How to Use This Guidebook
 
-This guide is designed to help you apply a structured, AI-assisted approach to modernizing legacy Java applications. Here's how to maximize its value:
+This demonstration guidebook shows how you might apply a structured, AI-assisted approach to modernizing legacy Java applications. Here's how to get the most from these examples:
 
-### 1. **Start with the Strategy**
-Begin by reading through the chapters to understand the foundational principles:
+### 1. **Explore the Demonstrated Strategies**
+Browse through the chapters to see examples of key principles:
 - **Analysis-first approach** for understanding legacy systems
 - **Behavioral preservation** strategies to maintain business logic integrity
 - **Risk mitigation** techniques for large-scale modernization efforts
 
-### 2. **Apply the Structured Process**
-Follow the documented workflow that leverages GitHub Copilot Agent Mode:
+### 2. **See the Structured Process in Action**
+Observe the demonstrated workflow that leverages GitHub Copilot Agent Mode:
 - Use the provided **meta-prompts** and **prompt templates** from the appendices
 - Apply the **"Reverse then Forward"** methodology for safe modernization
 - Implement **incremental validation** at each step of the journey
@@ -36,7 +36,7 @@ The examples demonstrate how to:
 
 ## Key Focus: Process Over Perfect Outcomes
 
-> **Important:** The primary goal of this guide is **not to demonstrate fully working modernized applications** (which may require several iterations to perfect), but rather to showcase:
+> **Important:** This guidebook is **not intended to demonstrate fully working modernized applications** (which may require several iterations to perfect), but rather to show:
 > 
 > - **The structured approach** to modernization that improves success rates
 > - **Effective use of GitHub Copilot Agent Mode** for complex migration tasks
@@ -45,7 +45,7 @@ The examples demonstrate how to:
 
 ## Sample Applications
 
-The guide includes hands-on practice across two representative legacy applications:
+The guidebook demonstrates approaches using two representative legacy applications:
 
 - **Spring Framework PetClinic (pre–Spring Boot)** — a classic Spring MVC app
 - **Java EE Petstore (EE6)** — a JSF + EJB + JPA sample
@@ -54,12 +54,12 @@ The guide includes hands-on practice across two representative legacy applicatio
 
 ## Getting Started
 
-To begin your modernization journey:
+To explore these modernization demonstrations:
 
-1. **Read the Guide**: Open [SUMMARY.md](SUMMARY.md) and navigate through the chapters
-2. **Review the Samples**: Examine the `modernisation` branches in the sample repositories
-3. **Apply the Techniques**: Use the provided prompts and methodologies in your own projects
-4. **Iterate and Improve**: Adapt the approaches based on your specific modernization challenges
+1. **Browse the Content**: Open [SUMMARY.md](SUMMARY.md) and navigate through the chapters
+2. **Examine the Examples**: Review the `modernisation` branches in the sample repositories
+3. **Adapt for Your Context**: Consider how these demonstrated techniques might apply to your own projects
+4. **Experiment and Learn**: Use these examples as a starting point for your own modernization explorations
 
 > Portions of this work were generated with the assistance of AI tools, including GitHub Copilot.
 > All content has been reviewed and curated for accuracy and educational use. Provided "as is" without warranty.
