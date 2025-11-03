@@ -1,9 +1,6 @@
 # Chapter 5 – Modernising Spring Framework PetClinic
 
-(XML→JavaConfig optional; **primary target is Spring Boot 3 migration** with tests-first.)
-
-
-### Meta-Prompt: Characterisation Tests (Service/Web/Repo)
+### Prompt: Characterisation Tests (Service/Web/Repo)
 
 ```
 You are writing characterisation tests to capture current behaviour BEFORE refactoring.
@@ -34,12 +31,7 @@ ACCEPTANCE CRITERIA:
 - Tests are deterministic and expressive.
 ```
 
-**Paste Copilot output below this line:**  
-<!-- INSERT: CH5-TESTS-UNIT/WEB/REPO -->
-
-
-
-### Meta-Prompt: Spring Framework → Spring Boot 3 Migration Plan (Primary Path)
+### Prompt: Spring Framework → Spring Boot 3 Migration Plan (Primary Path)
 
 ```
 You are migrating a pre–Spring Boot MVC app to **Spring Boot 3.x** targeting **Java 17/21**.
@@ -83,12 +75,8 @@ OUTPUT (markdown):
 Provide copy-pasteable POM and minimal class snippets; do not include full files.
 ```
 
-**Paste Copilot output below this line:**  
-<!-- INSERT: CH5-BOOT-MIGRATION -->
 
-
-
-### Meta-Prompt: XML → JavaConfig Migration Plan (Optional stepping-stone before Boot)
+### Prompt: XML → JavaConfig Migration Plan (Optional stepping-stone before Boot)
 
 ```
 You are replacing XML config with JavaConfig, preserving behaviour, ONLY if you choose a stepping-stone before Boot.
@@ -108,7 +96,7 @@ OUTPUT:
 
 
 
-### Meta-Prompt: javax → jakarta Impact Scan (Optional)
+### Prompt: javax → jakarta Impact Scan (Optional)
 
 ```
 Scan the codebase for javax.* usage and classify findings:
@@ -128,7 +116,7 @@ OUTPUT:
 
 
 
-### Meta-Prompt: Update Tests for Spring Boot Slices
+### Prompt: Update Tests for Spring Boot Slices
 
 ```
 You are updating tests to Spring Boot testing slices while preserving assertions.

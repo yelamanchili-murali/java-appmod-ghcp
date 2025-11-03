@@ -1,9 +1,6 @@
 # Chapter 4 – Reverse-Then-Forward Engineering
 
-(Concept, diagrams, examples.)
-
-
-### Meta-Prompt: Comments-First Comprehension (Reader-Oriented)
+### Prompt: Comments-First Comprehension (Reader-Oriented)
 
 Use this BEFORE writing the spec. It improves human comprehension for code reviews and future prompts.
 
@@ -33,7 +30,7 @@ OUTPUT:
 
 
 
-### Meta-Prompt: Reverse-Engineered Application Specification
+### Prompt: Reverse-Engineered Application Specification
 
 ```
 You are authoring a publishable application specification for this legacy app to enable safe modernisation.
@@ -71,7 +68,3 @@ OUTPUT FORMAT (markdown):
 ## 6. Traceability Map (code → spec)
 Use concise, publishable tables.
 ```
-
-**Paste Copilot output below this line:**  
-<!-- INSERT: CH4-APP-SPEC -->
-

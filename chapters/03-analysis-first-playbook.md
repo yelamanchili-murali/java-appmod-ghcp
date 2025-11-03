@@ -1,10 +1,6 @@
 # Chapter 3 – The Analysis-First Playbook
 
-(Inventory, risk, decision artefacts.)
-
-
-
-### Meta-Prompt: Repository Recon → Modernisation Brief
+### Prompt: Repository Recon → Modernisation Brief
 
 Use this in Copilot Chat at the repo root.
 
@@ -43,7 +39,3 @@ OUTPUT FORMAT (markdown):
 ## 5. Recommended Sequencing (table)
 Include file paths when citing artefacts.
 ```
-
-**Paste Copilot output below this line in your project fork:**  
-<!-- INSERT: CH3-RECON -->
-
