@@ -28,6 +28,21 @@ Traditional modernisation efforts involve large teams manually analysing legacy 
 
 When combined with a disciplined engineering method—particularly the *Reverse-Then-Forward* approach—Copilot accelerates comprehension before transformation. This ensures that the new system preserves business logic and remains testable and maintainable.
 
+### ** The Modernisation Spectrum**
+
+Every legacy Java application falls somewhere on a continuum from small updates to fundamental rewrites. Understanding the spectrum helps determine effort, risk, and where Copilot adds value.
+
+| **Tier**                              | **Scenario**                                            | **Typical Challenges**                               | **AI Assist Coverage**                                                      |
+| ------------------------------------- | ------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------- |
+| **S0 – Minor Upgrade**                | Incremental version bump (e.g., Spring Boot 3.2 → 3.3)  | Minimal API drift                                    | **High** – Copilot automates repetitive refactors and dependency updates.   |
+| **S1 – Major Upgrade**                | Migration across major versions (Spring Boot 2.x → 3.x) | `javax → jakarta`, JDK 17+ requirements              | **Medium–High** – Copilot handles namespace migration and syntax updates.   |
+| **S2 – Framework Jump**               | Spring Framework → Spring Boot                          | Configuration and dependency re-architecture         | **Medium** – Copilot assists config rewrites and pattern detection.         |
+| **S3 – Replatforming**                | Java EE on app servers → Cloud runtime                  | Repackaging EAR/WAR, removing container dependencies | **Low–Medium** – Automates code conversion; architecture remains human-led. |
+| **S4 – UI Migration**                 | JSF/Struts → MVC/WebFlux                                | Paradigm shift in navigation and state               | **Low** – Syntax aid only; UX design manual.                                |
+| **S5 – Architectural Transformation** | Monolith → Microservices                                | Domain decomposition, distributed transactions       | **Low** – Copilot supports extraction but not business boundary definition. |
+
+> **Tip**: The farther the effort moves from simple upgrades toward fundamental rewrites, the more human insight and planning matter. GitHub Copilot’s assistance diminishes for higher tiers because those involve design changes, not just code changes.
+
 ### 1.3  Objectives of This Book
 
 This book offers a hands-on, reproducible tutorial that applies the principles of AI-assisted modernisation to two legacy Java applications:
